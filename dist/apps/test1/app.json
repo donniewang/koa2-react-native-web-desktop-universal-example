@@ -1,0 +1,10 @@
+{
+  "name": "test1",
+  "displayName": "test1",
+  "expo": {
+    "packagerOpts": {
+      "projectRoots": "",
+      "config": "rn-cli.config.js"
+    }
+  }
+}

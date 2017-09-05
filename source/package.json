@@ -1,0 +1,16 @@
+{
+	"name": "source-lib",
+	"version": "1.0.0",
+	"private": true,
+	"main": "src/index.js",
+	"scripts": {
+	},
+	"peerDependencies": {
+		"react": "*",
+		"react-native": "*",
+		"react-native-search-box": "*",
+		"react-native-swiper": "*",
+		"react-navigation": "*",
+		"react-dom": "*"
+	}
+}

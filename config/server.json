@@ -1,0 +1,5 @@
+{
+    "hostname" : "*",
+    "domain" : "*",
+    "port" : 8080
+}
