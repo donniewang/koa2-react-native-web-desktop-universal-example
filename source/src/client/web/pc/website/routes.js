@@ -1,27 +1,24 @@
 import React from 'react';
 
-import { Router, Route, IndexRedirect, history } from 'dva/router';
+import { Router, Route, Switch } from 'dva/router';
 
-const cached = {};
-
-const registerModel = (app, model) => {
-    if(!cached[model.namespace]) {
-        app.model(model);
-        cached[model.namespace] = 1;
-    }
-}
+import dynamic from 'dva/dynamic';
 
 export default function({ history,app }) {
+
+    const App = dynamic({
+        app,
+        models: () => [
+            //import('./models/users'),
+        ],
+        component: () => import('./containers/app'),
+    });
+
     return (
         <Router history={ history }>
-            <Route path="/website" getComponent={ (nextState, cb) => {
-                require.ensure([], require => {
-                    cb(null, require('./containers/app'));
-                }, 'App')
-            }}>
-            </Route>
+            <Route exact path="/website" component={ App }></Route>
         </Router>
-    )
+    );
 }
 
 module.exports = exports['default'];
